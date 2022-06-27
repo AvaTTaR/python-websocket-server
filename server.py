@@ -9,14 +9,13 @@ def new_client(client, server):
 # Called for every client disconnecting
 def client_left(client, server):
 	print("Client(%d) disconnected" % client['id'])
-	server.send_message_to_all("Websocket-Server-1 - Client(%d) disconnected: " % client['id'])
 
 # Called when a client sends a message
 def message_received(client, server, message):
 	if len(message) > 200:
 		message = message[:200]+'..'
 	print("Client(%d) said: %s" % (client['id'], message))
-	server.send_message_to_all("Websocket-Server-1 - client sad: "  % (client['id'], message))
+	server.send_message_to_all("Websocket-Server-1 - client sad something ")
 
 
 PORT=9001
